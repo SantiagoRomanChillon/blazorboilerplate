@@ -1,9 +1,9 @@
 ﻿using IdentityModel;
-using IdentityServer4.Models;
+using Duende.IdentityServer.Models;
 
 namespace BlazorBoilerplate.Shared.Dto
 {
-    public static class IdentityServer4ModelsExtensions
+    public static class IdentityServerModelsExtensions
     {
         private static readonly IEnumerable<string> jwtClaimTypes = typeof(JwtClaimTypes).GetFields()
             .Where(x => x.IsStatic && x.IsLiteral)

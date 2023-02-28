@@ -27,7 +27,7 @@ using BlazorBoilerplate.Storage.Mapping;
 using Breeze.AspNetCore;
 using Breeze.Core;
 using FluentValidation.AspNetCore;
-using IdentityServer4;
+using Duende.IdentityServer;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,7 +53,7 @@ using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using static BlazorBoilerplate.Constants.PasswordPolicy;
 using static IdentityModel.JwtClaimTypes;
-using static IdentityServer4.IdentityServerConstants;
+using static Duende.IdentityServer.IdentityServerConstants;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace BlazorBoilerplate.Server
@@ -275,7 +275,7 @@ namespace BlazorBoilerplate.Server
                 else if (OperatingSystem.IsWindows())
                 {
                     Log.Logger.Debug("Trying to use WebHosting Certificate for Identity Server");
-                    identityServerBuilder.AddWebHostingCertificate();
+                    //identityServerBuilder.AddWebHostingCertificate();
                 }
                 else
                 {
@@ -330,7 +330,7 @@ namespace BlazorBoilerplate.Server
                         OnRemoteFailure = HandleOnRemoteFailure
                     };
                     options.ClaimActions.MapJsonSubKey("urn:google:image", "image", "url");
-                    options.ClaimActions.Remove(ClaimTypes.GivenName);
+                    options.ClaimActions.Remove(System.Security.Claims.ClaimTypes.GivenName);
                 });
             }
 
@@ -373,7 +373,7 @@ namespace BlazorBoilerplate.Server
                     // http://stackoverflow.com/questions/36330675/get-users-email-from-twitter-api-for-external-login-authentication-asp-net-mvc?lq=1
                     options.RetrieveUserDetails = true;
                     options.SaveTokens = true;
-                    options.ClaimActions.MapJsonKey("urn:twitter:profilepicture", "profile_image_url", ClaimTypes.Uri);
+                    options.ClaimActions.MapJsonKey("urn:twitter:profilepicture", "profile_image_url", System.Security.Claims.ClaimTypes.Uri);
                     options.Events = new TwitterEvents()
                     {
                         OnRemoteFailure = HandleOnRemoteFailure

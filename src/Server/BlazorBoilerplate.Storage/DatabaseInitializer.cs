@@ -6,8 +6,8 @@ using BlazorBoilerplate.Infrastructure.Storage.Permissions;
 using BlazorBoilerplate.Shared.Localizer;
 using Finbuckle.MultiTenant;
 using IdentityModel;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Mappers;
+using Duende.IdentityServer.EntityFramework.DbContexts;
+using Duende.IdentityServer.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -133,8 +133,7 @@ namespace BlazorBoilerplate.Storage
                             new Todo
                             {
                                 IsCompleted = false,
-                                Title = $"Buy {rnd.Next(2, 5)} {fruits[rnd.Next(fruits.Length)]}",
-                                CreatedById = users[rnd.Next(users.Length)].Id
+                                Title = $"Buy {rnd.Next(2, 5)} {fruits[rnd.Next(fruits.Length)]}"
                             }
                     );
             }

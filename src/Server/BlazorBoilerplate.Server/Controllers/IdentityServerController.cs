@@ -1,6 +1,6 @@
 ﻿using BlazorBoilerplate.Infrastructure.Server.Models;
 using BlazorBoilerplate.Server.Aop;
-using IdentityServer4.Services;
+using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 using static Microsoft.AspNetCore.Http.StatusCodes;

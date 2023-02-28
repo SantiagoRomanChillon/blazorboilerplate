@@ -1,8 +1,8 @@
 ﻿using BlazorBoilerplate.Infrastructure.AuthorizationDefinitions;
 using Humanizer;
 using IdentityModel;
-using IdentityServer4.Models;
-using static IdentityServer4.IdentityServerConstants;
+using Duende.IdentityServer.Models;
+using static Duende.IdentityServer.IdentityServerConstants;
 
 namespace BlazorBoilerplate.Storage
 {

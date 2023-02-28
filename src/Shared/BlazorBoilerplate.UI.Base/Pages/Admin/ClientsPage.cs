@@ -6,7 +6,7 @@ using BlazorBoilerplate.Shared.Localizer;
 using BlazorBoilerplate.Shared.Models;
 using Humanizer;
 using IdentityModel;
-using IdentityServer4.Models;
+using Duende.IdentityServer.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using System.Net;
